@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const cssCode = `
+const cssCodeFirst = `
 .button--primary {
     border: 2px solid var(--color-primary);
     box-shadow: inset 0 0 0 0 var(--color-primary);
@@ -13,24 +13,50 @@ const cssCode = `
     background-color: var(--color-primary);
     color: #ffffff;
 }`;
+
+const cssCodeSecond = `
+.button--primary-second {
+    border: 2px solid var(--btn-color-primary);
+    box-shadow: inset 0 0 0 0 var(--btn-color-primary);
+    color: var(--btn-color-primary);
+    transition: background-color 0.5s, transform 0.5s;
+}
+
+.button--primary-second:hover {
+    background-color: var(--btn-color-primary);
+    color: #ffffff;
+    transform: scale(110%);
+}`;
 ---
 
 <BaseLayout title="CSS Animations">
     <main class="main">
         <section class="transition">
-            <h1 class="mb-30">Переходы</h1>
+            <h1 class="mb-20">Переходы</h1>
 
-            <div class="transition__container">
+            <div class="transition__container mb-20">
                 <div class="transition__item">
                     <button class="button--2x button--primary">Button</button>
                 </div>
 
                 <div class="transition__code">
-                    <pre style="background-color:  #f0f1fd">
-                        <code class="language-css">{cssCode}</code>
+                    <pre style="background-color:  var(--bg-color-primary); font-size: 1.8rem;">
+                        <code class="language-css">{cssCodeFirst}</code>
                     </pre>
                 </div>
             </div>
+
+            <div class="transition__container">
+                <div class="transition__item">
+                    <button class="button--2x button--primary-second">Button</button>
+                </div>
+                <div class="transition__code">
+                    <pre style="background-color: var(--bg-color-primary); font-size: 1.8rem;">
+                        <code class="language-css">{cssCodeSecond}</code>
+                    </pre>
+                </div>
+            </div>
+            <p class="transition__text mb-10 mb-20"><span class="highlight">transform: scale(110%)</span> — это CSS-свойство, которое масштабирует элемент относительно его исходного размера. <span class="highlight">110%</span> означает увеличение на 10% (в 1.1 раза). Аналогично <span class="highlight">scale(1.1)</span> — то же самое, но в числовом формате.</p>
         </section>
     </main>
 </BaseLayout>
