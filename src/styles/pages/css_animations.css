@@ -1,0 +1,13 @@
+.transition__container {
+    display: flex;
+    gap: 2rem;
+    background-color: #f0f1fd;
+    padding: 1.5rem;
+}
+
+.transition__item,
+.transition__code {
+    flex: 1;
+    padding: 2rem;
+    background-color: #ffffff;
+}
