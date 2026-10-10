@@ -1,3 +1,10 @@
 @import './base/normalize.css';
 @import './base/typography.css';
 @import './base/global.css';
+
+@import './components/buttons.css';
+
+@import './pages/css_animations.css';
+
+@import './utils/utilities.css';
+@import './utils/variables.css';
