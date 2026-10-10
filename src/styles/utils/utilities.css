@@ -1,7 +1,15 @@
-.mb-30 {
-    margin-bottom: 3rem;
+.mb-20 {
+    margin-bottom: 2rem;
 }
-
+.mb-10 {
+    margin-top: 1rem;
+}
 .m-auto {
     margin: 0 auto;
+}
+
+.highlight {
+    background-color: #e0e0f3;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 }
