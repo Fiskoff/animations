@@ -37,3 +37,20 @@
     color: #ffffff;
     transform: scale(1.15);
 }
+
+.button--primary-third {
+    border: 2px solid var(--btn-color-primary);
+    box-shadow: inset 0 0 0 0 var(--btn-color-primary);
+    color: var(--btn-color-primary);
+    transition: background-color 0.8s ease-out, transform 0.3s;
+}
+
+.button--primary-third:hover {
+    background-color: var(--btn-color-primary);
+    color: #ffffff;
+    transform: translateY(-20px);
+}
+
+.button--primary-third:active {
+    transform: translateY(0);
+}

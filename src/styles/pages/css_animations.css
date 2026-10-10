@@ -30,4 +30,6 @@
     font-size: var(--fs-middle);
     padding: 1.5rem;
     border-radius: 1.5rem;
+    text-indent: 2rem;
+    line-height: 1.8;
 }

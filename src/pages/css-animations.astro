@@ -27,14 +27,32 @@ const cssCodeSecond = `
     color: #ffffff;
     transform: scale(110%);
 }`;
+
+const cssCodeThird = `
+.button--primary-third {
+    border: 2px solid var(--btn-color-primary);
+    box-shadow: inset 0 0 0 0 var(--btn-color-primary);
+    color: var(--btn-color-primary);
+    transition: background-color 0.8s ease-out, transform 0.3s;
+}
+
+.button--primary-third:hover {
+    background-color: var(--btn-color-primary);
+    color: #ffffff;
+    transform: translateY(-20px);
+}
+
+.button--primary-third:active {
+    transform: translateY(0);
+}`;
 ---
 
 <BaseLayout title="CSS Animations">
     <main class="main">
         <section class="transition">
-            <h1 class="mb-20">Переходы</h1>
+            <h1 class="mb-30">Переходы</h1>
 
-            <div class="transition__container mb-20">
+            <div class="transition__container mb-10">
                 <div class="transition__item">
                     <button class="button--2x button--primary">Button</button>
                 </div>
@@ -45,8 +63,35 @@ const cssCodeSecond = `
                     </pre>
                 </div>
             </div>
+            <div class="transition__text mb-30">
+                <p>
+                    CSS-свойство <span
+                        class="highlight">transition</span> задаёт плавную анимацию изменения стилей по формуле: <span
+                        class="highlight">transition: <свойство>
+                    <длительность> <функция> <задержка></span> (например, <span class="highlight">background-color 0.5s ease 0s)</span>.
+                    Длительность
+                    измеряется в секундах (<span class="highlight">s</span>) или миллисекундах (<span class="highlight">ms</span>).
+                    По умолчанию анимируются все свойства (<span class="highlight">all</span>) с
+                    функцией <span class="highlight">ease</span> и без задержки.
+                </p>
+                <p>
+                    Функция времени (timing function) определяет скорость анимации на её протяжении. Основные варианты: <span class="highlight">ease</span> — медленный старт и финиш (дефолт, идеален для hover и
+                    появления). <span class="highlight">linear</span> — равномерная скорость без ускорений (прогресс-бары,
+                    вращение). <span class="highlight">ease-in</span> — медленный старт, резкий конец (исчезновение элементов).
+                    <span class="highlight">ease-out</span> — резкий старт, плавное торможение (появление элементов,
+                    hover). <span class="highlight">ease-in-out</span> — медленно начинается и заканчивается (перемещение
+                    между состояниями). <span class="highlight">cubic-bezier(x1, y1, x2, y2)</span> — кастомная кривая ускорения
+                    (например, эффект пружины с отскоком). <span class="highlight">steps(n)</span> — дискретные скачки вместо плавности (ретро-стиль, эффект
+                    печатной машинки).
+                </p>
+                <p>
+                    Для большинства UI-задач достаточно <span class="highlight">ease</span> или <span class="highlight">ease-out</span>.
+                    Для уникальных физических эффектов используют
+                    <span class="highlight">cubic-bezier</span>, а для покадровой анимации — <span class="highlight">steps</span>.
+                </p>
+            </div>
 
-            <div class="transition__container">
+            <div class="transition__container mb-10">
                 <div class="transition__item">
                     <button class="button--2x button--primary-second">Button</button>
                 </div>
@@ -56,7 +101,59 @@ const cssCodeSecond = `
                     </pre>
                 </div>
             </div>
-            <p class="transition__text mb-10 mb-20"><span class="highlight">transform: scale(110%)</span> — это CSS-свойство, которое масштабирует элемент относительно его исходного размера. <span class="highlight">110%</span> означает увеличение на 10% (в 1.1 раза). Аналогично <span class="highlight">scale(1.1)</span> — то же самое, но в числовом формате.</p>
+            <div class="transition__text mb-30">
+                <p>
+                    <span class="highlight">transform: scale(110%)</span> — это CSS-свойство, которое масштабирует
+                    элемент относительно его исходного
+                    размера. 110% означает увеличение на 10% (в 1.1 раза). <span class="highlight">scale(1.1)</span> —
+                    то же самое, но в
+                    числовом формате. Значение меньше 100% (или меньше 1) уменьшает элемент: <span class="highlight">scale(50%)</span>
+                    или <span class="highlight">scale(0.5)</span>
+                    сожмёт элемент в два раза, а <span class="highlight">scale(200%)</span> или <span class="highlight">scale(2)</span>
+                    увеличит его вдвое.
+                </p>
+                <p>
+                    Аналогично работают <span class="highlight">scaleX()</span> и <span
+                        class="highlight">scaleY()</span>, которые масштабируют элемент только по одной оси:
+                    <span class="highlight">scaleX(1.2)</span> растянет элемент по горизонтали на 20%, а <span
+                        class="highlight">scaleY(0.8)</span> сожмёт его по вертикали на 20%.
+                    Оба свойства можно объединить в сокращённую запись <span class="highlight">scale(X, Y)</span>, где
+                    первое значение отвечает за
+                    горизонталь, а второе — за вертикаль, например <span class="highlight">scale(1.2, 0.8)</span>
+                    растянет элемент по горизонтали на
+                    20% и сожмёт по вертикали на 20%.
+                </p>
+            </div>
+
+            <div class="transition__container mb-10 ">
+                <div class="transition__item">
+                    <button class="button--2x button--primary-third">Push</button>
+                </div>
+                <div class="transition__code">
+                    <pre style="background-color: var(--bg-color-primary); font-size: 1.8rem;">
+                        <code class="language-css">{cssCodeThird}</code>
+                    </pre>
+                </div>
+            </div>
+            <div class="transition__text mb-30">
+                <p>
+                    <span class="highlight">transform: translateY(-20px)</span> — это CSS-свойство, которое сдвигает
+                    элемент по вертикали на 20 пикселей вверх, не меняя его место в потоке документа. Отрицательное
+                    значение означает сдвиг вверх, положительное — вниз.
+                </p>
+                <p>
+                    Аналогично работает <span class="highlight">translateX()</span>, который сдвигает элемент по
+                    горизонтали: положительное значение — вправо, отрицательное — влево. Оба свойства можно объединить в
+                    одну сокращённую запись <span class="highlight">translate(X, Y)</span>, где первое значение отвечает
+                    за горизонталь, а второе — за вертикаль, например <span
+                        class="highlight">translate(20px, -20px)</span> сдвинет элемент на 20 пикселей вправо и на
+                    20 пикселей вверх.
+                </p>
+                <p>
+                    В качестве единиц измерения можно использовать пиксели, rem или проценты, при этом проценты
+                    рассчитываются относительно размеров самого элемента, а не его родителя.
+                </p>
+            </div>
         </section>
     </main>
 </BaseLayout>
