@@ -1,16 +1,35 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const cssCode = `
+.button--primary {
+    border: 2px solid var(--color-primary);
+    box-shadow: inset 0 0 0 0 var(--color-primary);
+    color: var(--color-primary);
+    transition: 1s;
+}
+
+.button--primary:hover {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}`;
 ---
 
 <BaseLayout title="CSS Animations">
     <main class="main">
         <section class="transition">
             <h1 class="mb-30">Переходы</h1>
-            <div class="transition__container ">
-                <div class="transition__item ">
-                    <button class="button button--primary">Button</button>
+
+            <div class="transition__container">
+                <div class="transition__item">
+                    <button class="button--2x button--primary">Button</button>
                 </div>
-                <div class="transition__code"></div>
+
+                <div class="transition__code">
+                    <pre style="background-color:  #f0f1fd">
+                        <code class="language-css">{cssCode}</code>
+                    </pre>
+                </div>
             </div>
         </section>
     </main>
