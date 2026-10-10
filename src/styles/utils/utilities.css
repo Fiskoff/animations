@@ -1,3 +1,7 @@
-.mb-30{
+.mb-30 {
     margin-bottom: 3rem;
+}
+
+.m-auto {
+    margin: 0 auto;
 }
