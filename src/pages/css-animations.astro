@@ -75,15 +75,42 @@ const cssCodeThird = `
                     функцией <span class="highlight">ease</span> и без задержки.
                 </p>
                 <p>
-                    Функция времени (timing function) определяет скорость анимации на её протяжении. Основные варианты: <span class="highlight">ease</span> — медленный старт и финиш (дефолт, идеален для hover и
-                    появления). <span class="highlight">linear</span> — равномерная скорость без ускорений (прогресс-бары,
-                    вращение). <span class="highlight">ease-in</span> — медленный старт, резкий конец (исчезновение элементов).
-                    <span class="highlight">ease-out</span> — резкий старт, плавное торможение (появление элементов,
-                    hover). <span class="highlight">ease-in-out</span> — медленно начинается и заканчивается (перемещение
-                    между состояниями). <span class="highlight">cubic-bezier(x1, y1, x2, y2)</span> — кастомная кривая ускорения
-                    (например, эффект пружины с отскоком). <span class="highlight">steps(n)</span> — дискретные скачки вместо плавности (ретро-стиль, эффект
-                    печатной машинки).
+                    Функция времени (timing function) определяет скорость анимации на её протяжении. Основные варианты:
                 </p>
+                <ul class="ml-10">
+                    <li>
+                        <span class="highlight">ease</span> — медленный старт и финиш (дефолт, идеален для hover и
+                        появления).
+                    </li>
+                    <li>
+                        <span class="highlight">linear</span> — равномерная скорость без ускорений
+                        (прогресс-бары,
+                        вращение)..
+                    </li>
+                    <li>
+                        <span class="highlight">ease-in</span> — медленный старт, резкий конец (исчезновение
+                        элементов).
+                    </li>
+                    <li>
+                        <span class="highlight">ease-out</span> — резкий старт, плавное торможение (появление элементов,
+                        hover).
+                    </li>
+                    <li>
+                        <span class="highlight">ease-in-out</span> — медленно начинается и заканчивается
+                        (перемещение
+                        между состояниями).
+                    </li>
+                    <li>
+                        <span class="highlight">cubic-bezier(x1, y1, x2, y2)</span> — кастомная кривая
+                        ускорения
+                        (например, эффект пружины с отскоком).
+                    </li>
+                    <li>
+                        <span class="highlight">steps(n)</span> — дискретные скачки
+                        вместо плавности (ретро-стиль, эффект
+                        печатной машинки).
+                    </li>
+                </ul>
                 <p>
                     Для большинства UI-задач достаточно <span class="highlight">ease</span> или <span class="highlight">ease-out</span>.
                     Для уникальных физических эффектов используют

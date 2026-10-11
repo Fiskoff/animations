@@ -4,6 +4,11 @@
 .mb-10 {
     margin-bottom: 1rem;
 }
+
+.ml-20 {
+    margin-left: 2rem;
+}
+
 .m-auto {
     margin: 0 auto;
 }
