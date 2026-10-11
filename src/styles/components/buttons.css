@@ -25,6 +25,19 @@
     color: #ffffff;
 }
 
+.button--primary-cubic {
+    border: 2px solid var(--btn-color-primary);
+    box-shadow: inset 0 0 0 0 var(--btn-color-primary);
+    color: var(--btn-color-primary);
+    transition: 0.5s cubic-bezier(0.68, -0.8, 0.27, 1.8);
+}
+
+.button--primary-cubic:hover {
+    background-color: var(--btn-color-primary);
+    color: #ffffff;
+    padding: 3rem 11rem;
+}
+
 .button--primary-second {
     border: 2px solid var(--btn-color-primary);
     box-shadow: inset 0 0 0 0 var(--btn-color-primary);

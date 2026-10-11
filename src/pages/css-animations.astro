@@ -14,6 +14,20 @@ const cssCodeFirst = `
     color: #ffffff;
 }`;
 
+const cssCodeFirstCubic = `
+.button--primary-cubic {
+    border: 2px solid var(--btn-color-primary);
+    box-shadow: inset 0 0 0 0 var(--btn-color-primary);
+    color: var(--btn-color-primary);
+    transition: 0.5s cubic-bezier(0.68, -0.8, 0.27, 1.8);
+}
+
+.button--primary-cubic:hover {
+    background-color: var(--btn-color-primary);
+    color: #ffffff;
+    padding: 3rem 11rem;
+}`;
+
 const cssCodeSecond = `
 .button--primary-second {
     border: 2px solid var(--btn-color-primary);
@@ -63,6 +77,17 @@ const cssCodeThird = `
                     </pre>
                 </div>
             </div>
+            <div class="transition__container mb-10">
+                <div class="transition__item">
+                    <button class="button--2x button--primary-cubic">Button</button>
+                </div>
+
+                <div class="transition__code">
+                    <pre style="background-color:  var(--bg-color-primary); font-size: 1.8rem;">
+                        <code class="language-css">{cssCodeFirstCubic}</code>
+                    </pre>
+                </div>
+            </div>
             <div class="transition__text mb-30">
                 <p>
                     CSS-свойство <span
@@ -101,9 +126,34 @@ const cssCodeThird = `
                         между состояниями).
                     </li>
                     <li>
-                        <span class="highlight">cubic-bezier(x1, y1, x2, y2)</span> — кастомная кривая
-                        ускорения
-                        (например, эффект пружины с отскоком).
+                        <p class="mb-5">
+                            <span class="highlight">cubic-bezier(x1, y1, x2, y2)</span> это CSS-функция, которая
+                            позволяет
+                            создать кастомную кривую ускорения для анимации. В отличие от базовых функций (<span
+                                class="highlight">ease</span>, <span class="highlight">linear</span>),
+                            она даёт полный контроль над тем, как элемент ускоряется и замедляется.
+                        </p>
+                        <p class="mb-5">
+                            Кривая Безье определяется двумя контрольными точками:<br><span
+                                class="highlight">x1, y1</span> — первая контрольная точка
+                            (влияет на начало анимации)<br><span class="highlight">x2, y2</span> — вторая контрольная
+                            точка (влияет на конец
+                            анимации)
+                        </p>
+                        <p>
+                            Ограничения:<br><span class="highlight">x1</span> и <span class="highlight">x2</span> должны
+                            быть в диапазоне 0 до 1 (время не может быть отрицательным или
+                            больше 100%)<br><span class="highlight">y1</span> и <span class="highlight">y2</span> могут
+                            выходить за пределы 0-1 (это создаёт эффект "отскока" или
+                            "перелёта")
+                        </p>
+                        <p>
+                            Представь график, где по горизонтали — время (от 0 до 1), по вертикали — прогресс анимации
+                            (от 0
+                            до 1). Ты ставишь две точки, и браузер рисует между ними плавную кривую. Эта кривая и есть
+                            твоя
+                            анимация.
+                        </p>
                     </li>
                     <li>
                         <span class="highlight">steps(n)</span> — дискретные скачки
